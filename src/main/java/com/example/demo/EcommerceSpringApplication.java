@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EcommercceSpringApplication {
+public class EcommerceSpringApplication {
 
 	public static void main(String[] args) {
 
@@ -13,7 +13,7 @@ public class EcommercceSpringApplication {
 
 		dotenv.entries().forEach(dotenvEntry -> System.setProperty(dotenvEntry.getKey(),dotenvEntry.getValue()));
 
-		SpringApplication.run(EcommercceSpringApplication.class, args);
+		SpringApplication.run(EcommerceSpringApplication.class, args);
 	}
 
 }
