@@ -12,7 +12,4 @@ public interface ICategoryService {
 
     List<CategoryDto> getAllCategories() throws IOException;
 
-    List<ProductDto> getAllCategoryOfType() throws IOException;
-
-    FakeStoreProductResponseDto getCategoryById() throws IOException;
 }

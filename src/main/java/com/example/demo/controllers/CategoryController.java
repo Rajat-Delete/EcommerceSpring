@@ -28,14 +28,4 @@ public class CategoryController {
         return categoryService.getAllCategories();
     }
 
-    @GetMapping("/products/category/")
-    public List<ProductDto> getAllCategoryOfSameType() throws IOException{
-        return categoryService.getAllCategoryOfType();
-    }
-
-    @GetMapping("/product")
-    public FakeStoreProductResponseDto getProductById() throws IOException{
-        return categoryService.getCategoryById();
-    }
-
 }

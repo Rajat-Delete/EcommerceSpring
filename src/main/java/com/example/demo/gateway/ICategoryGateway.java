@@ -11,8 +11,4 @@ import java.util.List;
 public interface ICategoryGateway {
 
     List<CategoryDto> getAllCategory() throws IOException;
-
-    List<ProductDto> getAllCategoryOfType() throws IOException;
-
-    FakeStoreProductResponseDto getCategoryById() throws IOException;
 }
