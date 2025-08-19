@@ -3,6 +3,7 @@ package com.example.demo.services;
 import com.example.demo.dto.FakeStoreProductResponseDto;
 import com.example.demo.dto.FakeStoreProductsOfCategoryResponseDto;
 import com.example.demo.gateway.IProductGateway;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ public class FakeStoreProductService implements IProductService{
 
     private final IProductGateway productGateway;
 
-    public FakeStoreProductService(IProductGateway _productGateway){
+    public FakeStoreProductService(@Qualifier("fakeStoreProductGatewayRestTemplate") IProductGateway _productGateway){
         this.productGateway = _productGateway;
     }
     @Override

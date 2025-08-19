@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class FakeStoreProductResponseDto {
-    Boolean status;
+    String status;
     String message;
     Product product;
 }
