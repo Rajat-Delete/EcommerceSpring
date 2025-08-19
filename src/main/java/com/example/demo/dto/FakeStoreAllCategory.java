@@ -10,7 +10,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FakeStoreAllCategory {
-
     boolean status;
     String message;
     List<Category> products;
