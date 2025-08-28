@@ -2,6 +2,7 @@ package com.example.demo.gateway;
 
 import com.example.demo.dto.*;
 import com.example.demo.gateway.Api.FakeStoreCategoryApi;
+import com.example.demo.mappers.GetAllCategoryMapper;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -20,10 +21,7 @@ public class FakeStoreCategoryGateway implements ICategoryGateway{
     public List<CategoryDto> getAllCategory() throws IOException {
         FakeStoreCategoryResponseDto responseDto = fakeStoreCategoryApi.getAllCategories().execute().body();
 
-        return responseDto.getCategories()
-                .stream().map(category ->
-                        CategoryDto.builder().category(category).build())
-                .toList();
+        return GetAllCategoryMapper.toCategoryDTO(responseDto);
     }
 
 }

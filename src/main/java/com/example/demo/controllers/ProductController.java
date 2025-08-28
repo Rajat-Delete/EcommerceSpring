@@ -2,7 +2,10 @@ package com.example.demo.controllers;
 
 import com.example.demo.dto.FakeStoreProductResponseDto;
 import com.example.demo.dto.FakeStoreProductsOfCategoryResponseDto;
+import com.example.demo.dto.Product;
+import com.example.demo.dto.ProductRequestDTO;
 import com.example.demo.services.IProductService;
+import okhttp3.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,5 +28,10 @@ public class ProductController {
     @GetMapping("/category")
     public ResponseEntity<FakeStoreProductsOfCategoryResponseDto> getProductsByCategoryType(@RequestParam("type") String categoryType) throws IOException{
         return ResponseEntity.ok(productService.getProductsOfCategoryType(categoryType));
+    }
+
+    @PostMapping
+    public ResponseEntity<Product> createProduct(@RequestBody ProductRequestDTO productRequestDTO){
+        return ResponseEntity.ok(productService.createProduct(productRequestDTO));
     }
 }

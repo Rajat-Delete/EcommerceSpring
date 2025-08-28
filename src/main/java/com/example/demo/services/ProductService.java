@@ -4,32 +4,24 @@ import com.example.demo.dto.FakeStoreProductResponseDto;
 import com.example.demo.dto.FakeStoreProductsOfCategoryResponseDto;
 import com.example.demo.dto.Product;
 import com.example.demo.dto.ProductRequestDTO;
-import com.example.demo.gateway.IProductGateway;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
 @Service
-public class FakeStoreProductService implements IProductService{
-
-    private final IProductGateway productGateway;
-
-    public FakeStoreProductService(@Qualifier("fakeStoreProductGatewayRestTemplate") IProductGateway _productGateway){
-        this.productGateway = _productGateway;
-    }
+public class ProductService  implements IProductService{
     @Override
     public FakeStoreProductResponseDto getProductById(long id) throws IOException {
-        return productGateway.getProductById(id);
+        return null;
     }
 
     @Override
     public FakeStoreProductsOfCategoryResponseDto getProductsOfCategoryType(String categoryType) throws IOException {
-        return productGateway.getProductsByCategory(categoryType);
+        return null;
     }
 
     @Override
     public Product createProduct(ProductRequestDTO productRequestDTO) {
-        return null;
+
     }
 }
